@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+   
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/headd.ico" type="image/x-icon">
+    <title>Douglas</title>
+    <script src="https://kit.fontawesome.com/1a8e62b57b.js" crossorigin="anonymous"></script>
+</head>
+<body id="meuCorpo">
+    <!-- Inclui o arquivo de som -->
+	<audio id="meuSom">
+		<source src="sound/click.mp3" type="audio/mp3">
+        
+	</audio>
+        <input type="checkbox" class="checkbox" id="chk"/>
+        <label class="label" for="chk">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+        </label>
+    <!-- Inclui o arquivo de script -->
+    <script src="script.js">
+    </script>
+    <div class="container">
+        <nav>
+            <div class="logo">folio<b>.</b></div>
+            <div class="navigation">
+                <ul>
+                    <li class="list active">
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="home-outline"></ion-icon>
+                            </span>
+                            <span class="text">Home</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="projetos.html">
+                            <span class="icon">
+                                <ion-icon name="rocket-outline"></ion-icon>
+                            </span>
+                            <span class="text">Projetos</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="person-outline"></ion-icon>
+                            </span>
+                            <span class="text">Sobre</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
+                </ul>
+            </div>   
+        </nav>
+            <div class="wrapper">
+                <div class="cols cols0">
+                    <span class="topline">>Hello Wolrd</span>
+                    <h1>Eu sou <span class="multiText"></span></h1>
+                    <p>Olá! Sou Douglas Sarmento, desenvolvedor Front-end com especialidade em React, HTML e CSS. Ajudo Empresas, Designers e Organizações em geral a colocarem em prática boas ideias. Vamos conversar?</p>
+                    <div class="links">
+                        <a href="https://www.linkedin.com/in/douglas-sarmento-8a204a266/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Eudouglas"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/douglassarmento_/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/Eudouglassarmento"><i class="fab fa-facebook"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=21981736475&text&type=phone_number&app_absent=0"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="btns">
+                        <button>download CV</button>
+                        <button>me contate</button>
+                    </div>  
+                 </div>
+                <div class="cols cols1">
+                    <div class="imgbox">
+                        <img src="img/background2.png" id="cloud">
+                        <img src="img/background1.png">
+                    </div>
+                </div>    
+            </div>
+            <script>
+            const list = document.querySelectorAll('.list');
+            function activeLink(){
+                list.forEach((item) =>
+                    item.classList.remove('active'));
+                    this.classList.add('active');
+                    }
+                    list.forEach((item) =>
+                    item.addEventListener('click', activeLink));
+            </script>
+                        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+            <script>
+                var typingEffect = new Typed(".multiText",{
+                    strings: ["douglas", "front-end"],
+                    loop:true,
+                    typeSpeed:100,
+                    backSpeed:80,
+                    backDelay:1500
+                })
+            </script>
+    
+</body>
+</html>

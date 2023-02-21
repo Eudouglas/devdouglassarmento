@@ -1,0 +1,287 @@
+/* dado abaixo é o link cdn de fontes do google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'poppins' ,sans-serif;
+}
+.logo {
+  display: flex;
+  position: absolute;
+  top: 18px;
+  left: 150px;
+  font-size: 50px;
+  font-weight: 800;
+  color: #f3f5f8;
+  letter-spacing: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.navigation {
+  position: relative;
+  right: -380px;
+  top: 16px;
+  width: 212px;
+  height: 70px;
+  background-color: #3d535f;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.navigation ul {
+  display: flex;
+  width: 350px;
+}
+.navigation ul li{
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 95px;
+  font-size: 2.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: #f3f5f8
+}
+.navigation ul li.active a .icon {
+  transform: translateY(-30px);
+}
+.navigation ul li a .text {
+  position: absolute;
+  display: flex;
+  color: #f3f5f8;
+  text-transform: uppercase;
+  top: 35%;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing:0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(-50%);
+}
+.navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+.indicator {
+  position: absolute;
+  display: flex;
+  top: -35%;
+  margin: 6px;
+  width: 60px;
+  height: 60px;
+  background: #7f00ff ;
+  border-radius: 50%;
+  border: 6px solid var(--clr);
+  transition: 0.5s;
+}
+.indicator::before {
+  content: '';
+  position: absolute;
+  top: 27%;
+  left: -30.5px;
+  width: 30px;
+  height:40px;
+  background:transparent ;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--clr);
+}
+.indicator::after {
+  content: '';
+  position: absolute;
+  top: 27%;
+  right: -30.5px;
+  width: 30px;
+  height:40px;
+  background:transparent ;
+  border-top-left-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--clr);
+}
+.navigation ul li:nth-child(1).active ~ .indicator{
+  transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator{
+  transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator{
+  transform: translateX(calc(70px * 2));
+}
+b {
+  font-size: 70px;
+  color: #7f00ff
+}
+:root {
+  --clr:#232c35;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #232c35;
+  overflow: hidden;
+  perspective: 10rem;
+}
+
+#canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fire-wrapper {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform-origin: top center;
+  transform: translate(-50%, 0) rotate3d(1, 0, 0, 60deg);
+  width: 3.5rem;
+}
+
+.fire {
+  animation: whoosh 1s linear infinite both;
+  width: 100%;
+}
+
+@keyframes whoosh {
+  from {
+    transform: translateY(-25%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.rain {
+  position: absolute;
+  width: 1rem;
+  height: 10rem;
+  background: #ffffff;
+  border-radius: 20%;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.drop {
+  width: 1rem;
+  height: 7rem;
+  background: #ffffff;
+  position: absolute;
+  border-radius: 20%;
+  opacity: 0.2;
+}
+
+.rain1 {
+  left: 5rem;
+  top: 2rem;
+  animation: raining 2s linear infinite both;
+}
+
+.rain2 {
+  left: 15rem;
+  top: 10rem;
+  animation: raining 3s linear infinite both;
+}
+
+.drop2 {
+  top: 12rem;
+  animation: raining 4s linear infinite both -2s;
+}
+
+.rain3 {
+  left: 5rem;
+  top: 35rem;
+  animation: raining 3s linear infinite both;
+}
+
+.rain4 {
+  right: 23rem;
+  top: 6rem;
+  animation: raining 4s linear infinite both;
+}
+
+.rain5 {
+  left: 25rem;
+  top: 47rem;
+  animation: raining 3s linear infinite both -3s;
+}
+
+.drop5 {
+  top: -6rem;
+  animation: raining 2s linear infinite both;
+}
+
+.rain6 {
+  right: 10rem;
+  top: 34rem;
+  animation: raining 3s linear infinite both;
+}
+
+.rain7 {
+  left: 34rem;
+  top: 10rem;
+  animation: raining 2s linear infinite both -5s;
+}
+
+.rain8 {
+  right: 25rem;
+  top: 40rem;
+  animation: raining 3s linear infinite both;
+}
+
+.drop8 {
+  top: -7rem;
+  animation: raining 4s linear infinite both -6s;
+}
+
+.rain9 {
+  right: 5rem;
+  top: 15.5rem;
+  animation: raining 3s linear infinite both;
+}
+
+.rain10 {
+  left: 24rem;
+  top: -4rem;
+  animation: raining 2s linear infinite both -3s;
+}
+
+.drop11 {
+  right: 17rem;
+  top: 20rem;
+  animation: raining 3s linear infinite both;
+}
+
+.drop12 {
+  right: 15rem;
+  top: 50rem;
+  animation: raining 4s linear infinite both -1s;
+}
+
+@keyframes raining {
+  from {
+    transform: translateY(-1200px);
+  }
+  to {
+    transform: translateY(869px);
+  }
+}
+

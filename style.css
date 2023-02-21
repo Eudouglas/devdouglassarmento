@@ -1,0 +1,335 @@
+/* dado abaixo é o link cdn de fontes do google */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' ,sans-serif;
+ }
+ :root {
+   --clr:#f3f5f8;
+}
+ body {
+   width: 100;
+   min-height: 100vh;
+   background-color: #f3f5f8;
+   overflow:hidden;
+   transition: 0.2s linear;
+ }
+/*DARK MODE*/
+body.dark,
+body.dark span,
+body.dark h1,
+body.dark p,
+body.dark .logo,
+body.dark .links a {
+  color: #f3f5f8;
+}
+
+body.dark {
+  background: #232c35;
+  --clr:#232c35;
+}
+
+body.dark .multiText {
+  color: #7f00ff;
+  text-transform: capitalize;
+}
+body.dark .links a:hover {
+  color: #7f00ff;
+}
+body.dark li:hover a, 
+.links a:hover {
+  color: #7f00ff;
+}
+ .checkbox {
+   opacity: 0;
+   position: absolute;
+ }
+ .label {
+   background-color:#3d535f;
+   box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+   border-radius: 50px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 5px;
+   position: absolute;
+   right: 30px;
+   top: 25px;
+   height: 27px;
+   width: 50px;
+   transform: scale(1.5);
+ }
+ .label .ball{
+   background-color: #fff;
+   border-radius: 50%;
+   position: absolute;
+   top: 2px;
+   left: 2px;
+   height: 22px;
+   width: 22px;
+   transform: translateX(0px);
+   transition: transform 0.2s linear;
+ }
+
+ .checkbox:checked + .label .ball{
+   transform: translateX(24px);
+ }
+ .fa-moon {
+   color: #f1c40f;
+ }
+ .fa-sun {
+   color: #f39c12;
+ }
+
+ nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 80px;
+    line-height: 80px;
+    z-index: 111;
+ }
+ .logo {
+    display: flex;
+    position: absolute;
+    top: 18px;
+    left: 150px;
+    font-size: 50px;
+    font-weight: 800;
+    color: #3d535f;
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+ }
+.navigation {
+   position: relative;
+   right: 30vh;
+   top: 16px;
+   width: 212px;
+   height: 70px;
+   background-color: #3d535f;
+   box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+}
+.navigation ul {
+   display: flex;
+   width: 350px;
+}
+.navigation ul li{
+   position: relative;
+   list-style: none;
+   width: 70px;
+   height: 70px;
+   z-index: 1;
+}
+.navigation ul li a {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 100%;
+   text-align: center;
+   font-weight: 500;
+}
+.navigation ul li a .icon {
+   position: relative;
+   display: block;
+   line-height: 95px;
+   font-size: 2.5em;
+   text-align: center;
+   transition: 0.5s;
+   color: #f3f5f8
+}
+.navigation ul li.active a .icon {
+   transform: translateY(-30px);
+}
+.navigation ul li a .text {
+   position: absolute;
+   display: flex;
+   color: #f3f5f8;
+   text-transform: uppercase;
+   top: 10%;
+   font-weight: 400;
+   font-size: 15px;
+   letter-spacing:0.05em;
+   transition: 0.5s;
+   opacity: 0;
+   transform: translateY(-50%);
+}
+.navigation ul li.active a .text {
+   opacity: 1;
+   transform: translateY(10px);
+}
+.indicator {
+   position: absolute;
+   display: flex;
+   top: -35%;
+   margin: 6px;
+   width: 60px;
+   height: 60px;
+   background: #7f00ff ;
+   border-radius: 50%;
+   border: 6px solid var(--clr);
+   transition: 0.5s;
+}
+.indicator::before {
+   content: '';
+   position: absolute;
+   top: 27%;
+   left: -30.5px;
+   width: 30px;
+   height:40px;
+   background:transparent ;
+   border-top-right-radius: 20px;
+   box-shadow: 0px -10px 0 0 var(--clr);
+}
+.indicator::after {
+   content: '';
+   position: absolute;
+   top: 27%;
+   right: -30.5px;
+   width: 30px;
+   height:40px;
+   background:transparent ;
+   border-top-left-radius: 20px;
+   box-shadow: 0px -10px 0 0 var(--clr);
+}
+.navigation ul li:nth-child(1).active ~ .indicator{
+   transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator{
+   transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator{
+   transform: translateX(calc(70px * 2));
+}
+b {
+   font-size: 70px;
+   color: #7f00ff
+}
+
+.links{
+   display: flex;
+   position: relative;
+}
+.links a {
+   font-size: 30px;
+   color:#3d535f;
+   margin: 25px 10px;
+}
+.wrapper {
+   display: flex;
+   width: 100%;
+   height: calc(100vh - 80px);
+   justify-content: center;
+   align-items: center;
+   padding: 0 10%;
+   overflow: hidden;
+}
+.cols {
+   width: 50%;
+}
+
+.topline {
+   display: block;
+   position: relative;
+   font-size: 35px;
+   letter-spacing: 5px;
+   color: #3d535f;
+}
+.topline::after {
+   position: absolute;
+   content: '';
+   height: 4px;
+   width: 45px;
+   bottom: 10px;
+   background-color:#7f00ff ;
+}
+
+h1{
+   display: block;  
+   font-size: 3em;
+   font-weight: 900;
+   color: #3d535f;
+}
+
+.multiText {
+   color: #7f00ff;
+   text-transform: capitalize;
+}
+
+p{
+   display: block;
+   width: 90%;
+   font-size: 1.2em;
+   color: #3d535f;
+}
+.btns {
+   width: 100%;
+   position: relative;
+   margin-top: -30px;
+}
+
+button {
+   outline: none;
+   border: none;
+   cursor: pointer;
+   font-size: 25px;
+   font-weight: 400;
+   color: #fff;
+   background-color: #3d535f;
+   padding: 0px 10px;
+   margin: 40px 5px;
+   letter-spacing: 1px;
+   text-transform: capitalize;
+   box-shadow: 0 15px 10px rgba(0,0,0,0.4);
+
+}
+button:hover{
+   background-color: #7f00ff;
+}
+
+.imgbox {
+   position: relative;
+   width: 100%;
+   height: 100%;
+}
+.imgbox img{
+   position: relative;
+   width: calc(130% - 80px);
+   top: -20px;
+   right: 10px;
+   animation: animateUser 4s linear infinite;
+}
+
+@keyframes animateUser{
+   50%{
+      right: 30px;
+      top: -10px;
+   }
+}
+
+.imgbox #cloud{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-45%, -55%);
+   width:160%;
+   filter: saturate(200%);
+   animation: animate 4s linear infinite;
+}
+@keyframes animate {
+   50%{
+      top: 49%;
+      left: 51%;
+      width: 155%;
+   }
+}
+   
